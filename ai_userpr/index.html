@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI自己PRジェネレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AIで自己PRを作成</h1>
+            <p>職種や経験を入力すると、AIが自己PR文を生成します。</p>
+        </header>
+
+        <main>
+            <form id="pr-form">
+                <label>
+                    志望職種
+                    <input type="text" id="jobTitle" placeholder="例: Webエンジニア" required>
+                </label>
+                <label>
+                    簡単な自己紹介・経験
+                    <textarea id="experience" rows="4" placeholder="開発経験やチームでの役割など" required></textarea>
+                </label>
+                <label>
+                    強み・アピールポイント
+                    <textarea id="strength" rows="3" placeholder="得意なスキルや成果" required></textarea>
+                </label>
+                <label>
+                    希望の文体
+                    <select id="tone">
+                        <option value="丁寧">丁寧</option>
+                        <option value="カジュアル">カジュアル</option>
+                        <option value="ビジネス向け">ビジネス向け</option>
+                    </select>
+                </label>
+                <button type="submit">自己PRを生成</button>
+            </form>
+
+            <section id="result-section" class="hidden">
+                <h2>生成された自己PR</h2>
+                <pre id="resultText"></pre>
+                <button id="copyButton">コピーする</button>
+            </section>
+
+            <div id="status" class="status"></div>
+        </main>
+
+        <footer>
+            <p>※ローカルで動かす場合は、同じフォルダで `server.js` を起動してください。</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
